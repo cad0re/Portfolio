@@ -227,17 +227,20 @@ h6 {
 
 /*--------------------------------------------------------------
 # Hero Section
---------------------------------------------------------------*/
+/*--------------------------------------------------------------*/
 #hero {
   width: 100%;
   height: 100vh;
   background: url("../img/hero-bg.jpg") top center;
   background-size: cover;
+  display: flex;
+  justify-content: flex-end; /* Empurra o conteúdo para a direita */
+  align-items: center;       /* Centraliza o texto verticalmente */
 }
 
 #hero:before {
   content: "";
-  background: rgba(5, 13, 24, 0.3);
+  background: rgba(5, 13, 24, 0.4); /* Escurece um pouco para dar mais leitura no fundo */
   position: absolute;
   bottom: 0;
   top: 0;
@@ -250,6 +253,8 @@ h6 {
   position: relative;
   z-index: 2;
   min-width: 300px;
+  margin-left: 25%;        /* Distância da borda direita */
+  text-align: left;         /* Mantém o texto alinhado à esquerda */
 }
 
 #hero h1 {
@@ -281,6 +286,15 @@ h6 {
 }
 
 @media (max-width: 768px) {
+  #hero {
+    justify-content: center; /* No celular centraliza para não vazar a tela */
+  }
+
+  #hero .hero-container {
+    margin-right: 0;
+    padding: 0 20px;
+  }
+
   #hero h1 {
     font-size: 28px;
     line-height: 36px;
